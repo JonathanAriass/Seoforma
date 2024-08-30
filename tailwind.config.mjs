@@ -8,6 +8,10 @@ export default {
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif'],
 			},
+			colors: {
+				'custom-dark-start': '#0f1819',
+				'custom-dark-end': '#1c363f',
+			},
 		},
 	},
 	plugins: [

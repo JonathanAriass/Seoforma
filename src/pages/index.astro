@@ -3,39 +3,82 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Seoforma">
-  <div class="flex md:flex-row flex-col">
-    <div class="flex-1">
-      <div class="flex w-full h-full items-center justify-center">
-        <div class="w-64 h-64">
-          <!-- Diamond-shaped image container -->
-          <div
-            class="w-full h-full bg-cover bg-center"
-            style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); background-image: url('/seoforma.png');"
-          >
+  <div class="flex flex-col mx-auto size-full max-w-[90rem] md:max-w-[75rem]">
+    <div class="flex flex-col my-16 md:flex-row md:my-24">
+      <div class="flex-1">
+        <div class="flex w-full h-full items-center justify-center">
+          <div class="w-64 h-64">
+            <!-- Diamond-shaped image container -->
+            <div
+              class="w-full h-full bg-cover bg-center"
+              style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); background-image: url('/seoforma.png');"
+            >
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- <p class="text-[48px] whitespace-pre-line text-center">
+        <!-- <p class="text-[48px] whitespace-pre-line text-center">
         BIENVENIDO A<br />SEOFORMA
       </p> -->
+      </div>
+      <div
+        class="flex flex-col flex-1 mt-8 items-center justify-center md:mt-0"
+      >
+        <p
+          class="text-center h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl"
+        >
+          CONOCE
+        </p>
+        <p
+          class="text-center h-auto font-poppins font-bold tracking-widest text-4xlmd:text-6xl"
+        >
+          NUESTRA
+        </p>
+        <p
+          class="text-center h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl"
+        >
+          HISTORIA
+        </p>
+      </div>
     </div>
-    <div class="flex-1 sm:mt-8 md:mt-0">
-      <p
-        class="lg:text-[64px] sm:text-[48px] text-center font-poppins font-bold tracking-widest"
+    <!-- <div class="p-[20px] bg-[#1a292b]"> -->
+    <div class="p-[20px]">
+      <div
+        class="flex flex-col gap-[20px] text-[16px] leading-relaxed tracking-tight md:flex-row md:gap-[140px] sm:mt-[40px]"
       >
-        CONOCE
-      </p>
-      <p
-        class="lg:text-[64px] sm:text-[48px] text-center font-poppins font-bold tracking-widest"
-      >
-        NUESTRA
-      </p>
-      <p
-        class="lg:text-[64px] sm:text-[48px] text-center font-poppins font-bold tracking-widest"
-      >
-        HISTORIA
-      </p>
+        <div class="flex-1 text-justify">
+          <h1
+            class="!mb-[20px] bg-gradient-to-r from-lime-500 via-green-400 to-lime-500 bg-clip-text text-transparent"
+          >
+            Un poquito de literatura
+          </h1>
+          <p>
+            Somos Seoforma, un equipo joven y apasionado de Mieres, Asturias,
+            formado por estudiantes de Administración y Dirección de Empresas
+            (ADE) y Programación Informática en la Universidad de Oviedo.
+            Nacimos con la visión de transformar el panorama digital de las
+            pequeñas y medianas empresas (PYMES), ayudándolas a ser más
+            competitivas en un mercado en constante evolución.
+          </p>
+        </div>
+        <div class="flex-1 text-justify">
+          <p class="md:mt-[10px]">
+            Creemos que el éxito de nuestros clientes es también nuestro éxito.
+            Nos enfocamos en ofrecer soluciones personalizadas en diseño y
+            desarrollo web que no solo mejoran la presencia online de las
+            empresas, sino que también potencian su crecimiento y rentabilidad.
+            Nuestra misión es convertirnos en el aliado digital que tu negocio
+            necesita, proporcionando herramientas efectivas que impulsen tus
+            resultados.
+          </p>
+          <p class="md:mt-[20px]">
+            Desde Mieres, trabajamos con el compromiso de llevar la innovación
+            digital a cada rincón de Asturias y más allá. Con Seoforma, tus
+            metas se convierten en nuestras, y juntos, alcanzaremos el siguiente
+            nivel.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 
