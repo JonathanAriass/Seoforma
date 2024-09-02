@@ -36,10 +36,10 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body
-    class="bg-gradient-to-b from-custom-dark-start to-custom-dark-end h-vh min-h-screen"
+    class="flex flex-col bg-gradient-to-b from-custom-dark-start to-custom-dark-end h-vh min-h-screen"
   >
     <Header />
-    <main>
+    <main class="grow flex flex-col">
       <slot />
       <Footer />
     </main>
