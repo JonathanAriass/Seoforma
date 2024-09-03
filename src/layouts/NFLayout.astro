@@ -39,7 +39,7 @@ const { title } = Astro.props;
     class="flex flex-col bg-gradient-to-b from-custom-dark-start to-custom-dark-end h-vh min-h-screen"
   >
     <Header />
-    <main class="grow flex flex-col">
+    <main id="main-content" class="grow flex flex-col">
       <slot />
       <Footer />
     </main>
