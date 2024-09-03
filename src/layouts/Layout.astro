@@ -39,7 +39,7 @@ const { title } = Astro.props;
     class="bg-gradient-to-b from-custom-dark-start to-custom-dark-end h-vh min-h-screen"
   >
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
       <Footer />
     </main>
@@ -49,6 +49,7 @@ const { title } = Astro.props;
       src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"
     ></script>
     <script>
+      // Initialize Flowbite menu
       function initializeFlowbiteMenu() {
         const toggleButton = document.querySelector(
           '[data-collapse-toggle="navbar-default"]',
@@ -65,6 +66,7 @@ const { title } = Astro.props;
         }
       }
 
+      // Initialize Flowbite menu on page load
       document.addEventListener("astro:page-load", () => {
         initializeFlowbiteMenu();
       });

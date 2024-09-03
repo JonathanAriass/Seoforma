@@ -12,6 +12,9 @@ export default {
 				'custom-dark-start': '#0f1819',
 				'custom-dark-end': '#1c363f',
 			},
+			boxShadow: {
+				'custom': '8px 16px 16px rgba(0, 0, 0, 0.25)',
+			},
 		},
 	},
 	plugins: [
