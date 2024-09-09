@@ -48,27 +48,6 @@ const { title } = Astro.props;
     <script
       src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"
     ></script>
-    <script>
-      function initializeFlowbiteMenu() {
-        const toggleButton = document.querySelector(
-          '[data-collapse-toggle="navbar-default"]',
-        );
-        const menu = document.querySelector("#navbar-default");
-
-        if (toggleButton && menu) {
-          toggleButton.addEventListener("click", () => {
-            const isExpanded =
-              toggleButton.getAttribute("aria-expanded") === "true";
-            toggleButton.setAttribute("aria-expanded", String(!isExpanded));
-            menu.classList.toggle("hidden");
-          });
-        }
-      }
-
-      document.addEventListener("astro:page-load", () => {
-        initializeFlowbiteMenu();
-      });
-    </script>
   </body>
 </html>
 <style is:global>

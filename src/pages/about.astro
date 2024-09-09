@@ -2,4 +2,136 @@
 import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="About" />
+<Layout title="About">
+  <div class="flex flex-col mx-auto size-full max-w-[90rem] md:max-w-[75rem]">
+    <div class="flex flex-col my-16 md:flex-row md:mt-60 md:mb-60">
+      <div class="flex-1">
+        <div class="flex w-full h-full items-center justify-center">
+          <div class="w-52 h-52 md:w-64 md:h-64">
+            <div class="w-full h-full neon-glow">
+              <img
+                src="/seoforma.png"
+                alt="Circular Image"
+                class="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col flex-1 mt-16 items-center justify-center md:mt-0"
+      >
+        <p
+          class="text-center h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
+        >
+          CONOCE
+        </p>
+        <p
+          class="text-center h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
+        >
+          NUESTRA
+        </p>
+        <p
+          class="text-center h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
+        >
+          HISTORIA
+        </p>
+        <a
+          href="#about-content"
+          class="animate-bounce-slow focus:animate-none hover:animate-none inline-flex bg-gradient-to-r from-lime-300 to-red-500 text-xl font-medium px-4 py-2 rounded-lg tracking-wide text-white mt-8"
+        >
+          <span class="ml-2">Saber más</span>
+        </a>
+      </div>
+    </div>
+    <!-- <div class="flex w-full h-full">
+      <div class="flex-1">
+        <div class="flex w-full h-full items-center justify-center">
+          <div class="w-64 h-64"></div>
+        </div>
+      </div>
+    </div> -->
+    <div id="about-content" class="p-[20px]">
+      <div
+        class="flex flex-col gap-[20px] text-[16px] leading-relaxed tracking-tight md:flex-row md:gap-[100px] sm:mt-[40px]"
+      >
+        <div class="flex-1 text-justify">
+          <h1
+            class="!mb-[20px] bg-gradient-to-r from-lime-500 via-green-400 to-lime-500 bg-clip-text text-transparent"
+          >
+            Un poquito de literatura
+          </h1>
+          <p>
+            Somos Seoforma, un equipo joven y apasionado de Mieres, Asturias,
+            formado por estudiantes de Administración y Dirección de Empresas
+            (ADE) y Programación Informática en la Universidad de Oviedo.
+            Nacimos con la visión de transformar el panorama digital de las
+            pequeñas y medianas empresas (PYMES), ayudándolas a ser más
+            competitivas en un mercado en constante evolución.
+          </p>
+        </div>
+        <div class="flex-1 text-justify">
+          <p class="md:mt-[10px]">
+            Creemos que el éxito de nuestros clientes es también nuestro éxito.
+            Nos enfocamos en ofrecer soluciones personalizadas en diseño y
+            desarrollo web que no solo mejoran la presencia online de las
+            empresas, sino que también potencian su crecimiento y rentabilidad.
+            Nuestra misión es convertirnos en el aliado digital que tu negocio
+            necesita, proporcionando herramientas efectivas que impulsen tus
+            resultados.
+          </p>
+          <p class="md:mt-[20px]">
+            Desde Mieres, trabajamos con el compromiso de llevar la innovación
+            digital a cada rincón de Asturias y más allá. Con Seoforma, tus
+            metas se convierten en nuestras, y juntos, alcanzaremos el siguiente
+            nivel.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @keyframes neonPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 45px 22.5px rgba(200, 255, 0, 0.7);
+        }
+        50% {
+          box-shadow: 0 0 75px 37.5px rgba(200, 255, 0, 1);
+        }
+      }
+
+      /* Custom class for glowing neon */
+      .neon-glow {
+        box-shadow: 0 0 45px 22.5px rgba(200, 255, 0, 0.7);
+        animation: neonPulse 2s infinite ease-in-out;
+        border-radius: 50%;
+      }
+    </style>
+  </div>
+</Layout>
+
+<script>
+  // Adjust height on href about-content click to avoid header overlap
+  function adjustAboutContentHeight() {
+    const aboutContent = document.getElementById("about-content");
+    const header = document.querySelector("header");
+
+    if (aboutContent && header) {
+      const section = document.querySelector('a[href="#about-content"]');
+      if (section) {
+        section.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: aboutContent.offsetTop - header.offsetHeight,
+            behavior: "smooth",
+          });
+        });
+      }
+    }
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    adjustAboutContentHeight();
+  });
+</script>

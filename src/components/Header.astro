@@ -1,5 +1,6 @@
 ---
-
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <header
@@ -50,28 +51,28 @@
             <li class="md:mx-5">
               <a
                 href="/"
-                class="block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:bg-gradient-to-r md:hover:from-lime-500 md:hover:via-green-400 md:hover:to-lime-500 md:border-0 md:p-0 md:hover:bg-clip-text md:hover:text-transparent sm:hover:text-black"
+                class={`${currentPath === "" ? "active" : ""} block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:bg-gradient-to-r md:hover:from-lime-500 md:hover:via-green-400 md:hover:to-lime-500 md:border-0 md:p-0 md:hover:bg-clip-text md:hover:text-transparent sm:hover:text-black`}
                 >INICIO</a
               >
             </li>
             <li class="md:mx-5">
               <a
                 href="/about"
-                class="block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:bg-gradient-to-r md:hover:from-lime-500 md:hover:via-green-400 md:hover:to-lime-500 md:border-0 md:p-0 md:hover:bg-clip-text md:hover:text-transparent sm:hover:text-black"
+                class={`${currentPath === "about" ? "active" : ""} block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:bg-gradient-to-r md:hover:from-lime-500 md:hover:via-green-400 md:hover:to-lime-500 md:border-0 md:p-0 md:hover:bg-clip-text md:hover:text-transparent sm:hover:text-black`}
                 >NOSOTROS</a
               >
             </li>
             <li class="md:mx-5">
               <a
                 href="/solutions"
-                class="block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:bg-gradient-to-r md:hover:from-lime-500 md:hover:via-green-400 md:hover:to-lime-500 md:border-0 md:p-0 md:hover:bg-clip-text md:hover:text-transparent sm:hover:text-black"
+                class={`${currentPath === "solutions" ? "active" : ""} block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:bg-gradient-to-r md:hover:from-lime-500 md:hover:via-green-400 md:hover:to-lime-500 md:border-0 md:p-0 md:hover:bg-clip-text md:hover:text-transparent sm:hover:text-black`}
                 >SOLUCIONES</a
               >
             </li>
             <li class="md:mx-5">
               <a
                 href="/contact-us"
-                class="block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:bg-gradient-to-r md:hover:from-lime-500 md:hover:via-green-400 md:hover:to-lime-500 md:border-0 md:p-0 md:hover:bg-clip-text md:hover:text-transparent sm:hover:text-black"
+                class={`${currentPath === "contact-us" ? "active" : ""} block py-2 px-3 text-white rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:bg-gradient-to-r md:hover:from-lime-500 md:hover:via-green-400 md:hover:to-lime-500 md:border-0 md:p-0 md:hover:bg-clip-text md:hover:text-transparent sm:hover:text-black`}
                 >CONTACTO</a
               >
             </li>
@@ -80,9 +81,47 @@
       </div>
     </nav>
   </div>
+
+  <style>
+    .active {
+      background-image: linear-gradient(
+        to right,
+        #84cc16,
+        #22c55e,
+        #84cc16
+      ); /* from lime-500, via green-400, to lime-500 */
+      background-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: 1000;
+    }
+  </style>
 </header>
 
 <script>
+  // Initialize Flowbite menu
+  function initializeFlowbiteMenu() {
+    const toggleButton = document.querySelector(
+      '[data-collapse-toggle="navbar-default"]',
+    );
+    const menu = document.querySelector("#navbar-default");
+
+    if (toggleButton && menu) {
+      toggleButton.addEventListener("click", () => {
+        console.log("toggleButton clicked");
+        const isExpanded =
+          toggleButton.getAttribute("aria-expanded") === "true";
+        toggleButton.setAttribute("aria-expanded", String(!isExpanded));
+        menu.classList.toggle("hidden");
+      });
+    }
+  }
+
+  // Initialize Flowbite menu on page load
+  document.addEventListener("astro:page-load", () => {
+    initializeFlowbiteMenu();
+  });
   // Adjust header background on scroll
   document.addEventListener("scroll", function () {
     const header = document.querySelector("header");
@@ -105,26 +144,34 @@
     }
   }
 
-  // Observe header changes
-  const header = document.querySelector("header");
-  const observer = new MutationObserver(() => {
-    adjustMainContentSize();
+  // When scroll detected menu should be closed with transition smooth
+  document.addEventListener("scroll", () => {
+    const menu = document.querySelector("#navbar-default");
+    if (menu) {
+      menu.classList.add("hidden");
+    }
   });
 
-  // Observe header changes
-  if (header) {
-    observer.observe(header, {
-      attributes: true,
-      childList: true,
-      subtree: true,
+  function setObserver() {
+    // Observe header changes
+    const header = document.querySelector("header");
+    const observer = new MutationObserver(() => {
+      adjustMainContentSize();
     });
+
+    // Observe header changes
+    if (header) {
+      observer.observe(header, {
+        attributes: true,
+        childList: true,
+        subtree: true,
+      });
+    }
   }
 
   // Adjust main content size on page load
   document.addEventListener("astro:page-load", () => {
     adjustMainContentSize();
+    setObserver();
   });
-
-  // Adjust main content size on resize
-  //   adjustMainContentSize();
 </script>
