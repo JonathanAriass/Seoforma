@@ -1,0 +1,50 @@
+---
+import { parse } from "node-html-parser";
+
+export interface Props {
+  icon: string;
+  [key: string]: any;
+}
+
+// Helper function to load and parse SVGs
+function getSVG(name: string) {
+  const filepath = `/src/svg/${name}.svg`;
+  const files = import.meta.glob<string>("/src/svg/**/*.svg", {
+    as: "raw",
+    eager: true,
+  });
+
+  if (!(filepath in files)) {
+    throw new Error(`${filepath} not found`);
+  }
+
+  // Parse the SVG string content
+  const root = parse(files[filepath]);
+
+  // Safely select the <svg> element and handle errors
+  const svg = root.querySelector("svg") as HTMLElement | null;
+  if (!svg) {
+    throw new Error(`No <svg> tag found in ${filepath}`);
+  }
+
+  // Extract attributes and innerHTML from the <svg> tag
+  const { attributes, innerHTML } = svg;
+
+  return {
+    attributes,
+    innerHTML,
+  };
+}
+
+// Extract props passed to the Astro component
+const { icon, ...attributes } = Astro.props as Props;
+
+// Get the SVG data
+const { attributes: baseAttributes, innerHTML } = getSVG(icon);
+
+// Merge the base <svg> attributes with any custom ones passed as props
+const svgAttributes = { ...baseAttributes, ...attributes };
+---
+
+<!-- Render the final <svg> element in the HTML -->
+<svg {...svgAttributes} set:html={innerHTML} />
