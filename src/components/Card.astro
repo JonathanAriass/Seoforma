@@ -11,9 +11,9 @@ const { icon, title, text } = Astro.props as Props;
 const paragraphs = text.split("\n");
 ---
 
-<!-- Card -->
+<!-- Card 1 -->
 <div
-  class="relative h-full bg-slate-800 rounded-3xl p-px md:before:absolute md:before:w-80 md:before:h-80 md:before:-left-40 md:before:-top-40 md:before:bg-slate-400 md:before:rounded-full md:before:opacity-0 md:before:pointer-events-none md:before:transition-opacity md:before:duration-500 md:before:translate-x-[var(--mouse-x)] md:before:translate-y-[var(--mouse-y)] md:before:group-hover:opacity-100 md:before:z-10 md:before:blur-[100px] md:after:absolute md:after:w-96 md:after:h-96 md:after:-left-48 md:after:-top-48 md:after:bg-indigo-500 md:after:rounded-full md:after:opacity-0 md:after:pointer-events-none md:after:transition-opacity md:after:duration-500 md:after:translate-x-[var(--mouse-x)] md:after:translate-y-[var(--mouse-y)] md:after:hover:opacity-10 md:after:z-30 md:after:blur-[100px] md:overflow-hidden"
+  class="relative h-full bg-slate-800 rounded-3xl p-px before:absolute before:w-80 before:h-80 before:-left-40 before:-top-40 before:bg-slate-400 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-10 before:blur-[100px] after:absolute after:w-96 after:h-96 after:-left-48 after:-top-48 after:bg-indigo-500 after:rounded-full after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-500 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:hover:opacity-10 after:z-30 after:blur-[100px] overflow-hidden"
 >
   <div
     class="relative h-full bg-slate-900 p-6 pb-8 rounded-[inherit] z-20 overflow-hidden"
@@ -38,6 +38,7 @@ const paragraphs = text.split("\n");
         </div>
         <Icon width="200" height="200" icon={icon} class="inline-flex" />
       </div>
+      <!-- Text -->
       <div class="grow mb-5">
         <h2 class="text-xl text-slate-200 font-bold mb-1 text-center">
           {title}

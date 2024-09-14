@@ -1,4 +1,6 @@
 ---
+import logo from "../assets/logo.webp";
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
@@ -10,7 +12,11 @@ const currentPath = pathname.slice(1); // remove the first "/"
     <nav id="header" class="py-2">
       <div class="flex flex-wrap justify-between py-4">
         <a href="/Seoforma" class="flex items-center md:mx-5">
-          <img src="/logo.webp" alt="Seoforma logo" class="mr-3 h-6 sm:h-9" />
+          <img
+            src={logo.src}
+            alt="Seoforma logo"
+            class="mr-3 h-9 md:h-9 w-auto"
+          />
           <span
             class="self-center text-xl text-white font-semibold whitespace-nowrap"
           >

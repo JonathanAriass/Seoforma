@@ -1,4 +1,6 @@
 ---
+import seoforma from "../assets/seoforma.png";
+
 import Layout from "@layouts/Layout.astro";
 import DownArrow from "@components/buttons/DownArrow.astro";
 import Card from "@components/Card.astro";
@@ -13,8 +15,8 @@ import Card from "@components/Card.astro";
             <div class="w-52 h-52 md:w-64 md:h-64">
               <div class="w-full h-full neon-glow">
                 <img
-                  src="/seoforma.png"
-                  alt="Circular Image"
+                  src={seoforma.src}
+                  alt="Seoforma logo"
                   class="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl"
                 />
               </div>
@@ -89,26 +91,27 @@ import Card from "@components/Card.astro";
       </div>
     </div>
 
-    <div
-      id="about-us-container"
-      class="p-[20px] max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group"
-      data-spotlight
-    >
-      <Card
-        icon="binoculars"
-        title="Visión"
-        text="Ser el referente en transformación digital para PYMES en Asturias y más allá, ayudando a nuestros clientes a alcanzar su máximo potencial a través de soluciones innovadoras en desarrollo y diseño web."
-      />
-      <Card
-        icon="mision"
-        title="Misión"
-        text=`Empoderar a las pequeñas y medianas empresas con herramientas digitales efectivas y accesibles, que impulsen su competitividad y crecimiento.\nNos comprometemos a ofrecer un servicio personalizado que refleje la identidad única de cada negocio, asegurando que sus logros sean también los nuestros.`
-      />
-      <Card
-        icon="valores"
-        title="Valores"
-        text=`• Compromiso: Adoptamos los objetivos de nuestros clientes.\n• Innovación: Soluciones creativas y tecnológicas.\n• Colaboración: Trabajo en equipo con clientes.\n• Transparencia: Comunicación clara y honesta.\n• Calidad: Resultados que superan expectativas.`
-      />
+    <div id="about-us-container" class="p-[20px]">
+      <div
+        class="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group"
+        data-spotlight
+      >
+        <Card
+          icon="binoculars"
+          title="Visión"
+          text="Ser el referente en transformación digital para PYMES en Asturias y más allá, ayudando a nuestros clientes a alcanzar su máximo potencial a través de soluciones innovadoras en desarrollo y diseño web."
+        />
+        <Card
+          icon="mision"
+          title="Misión"
+          text=`Empoderar a las pequeñas y medianas empresas con herramientas digitales efectivas y accesibles, que impulsen su competitividad y crecimiento.\nNos comprometemos a ofrecer un servicio personalizado que refleje la identidad única de cada negocio, asegurando que sus logros sean también los nuestros.`
+        />
+        <Card
+          icon="valores"
+          title="Valores"
+          text=`• Compromiso: Adoptamos los objetivos de nuestros clientes.\n• Innovación: Soluciones creativas y tecnológicas.\n• Colaboración: Trabajo en equipo con clientes.\n• Transparencia: Comunicación clara y honesta.\n• Calidad: Resultados que superan expectativas.`
+        />
+      </div>
     </div>
 
     <style>
