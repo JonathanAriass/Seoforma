@@ -1,56 +1,69 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import seoforma from "../assets/seoforma.png";
+import us from "../assets/contact-us.webp";
+import logo from "../assets/logo.webp";
+
+import Layout from "@layouts/Layout.astro";
+import DownArrow from "@components/buttons/DownArrow.astro";
+import Card from "@components/Card.astro";
 ---
 
-<Layout title="Seoforma">
+<Layout title="About">
   <div class="flex flex-col mx-auto size-full max-w-[90rem] md:max-w-[75rem]">
-    <div class="flex flex-col my-16 md:flex-row md:mt-36 md:mb-24">
-      <div class="flex-1">
-        <div class="flex w-full h-full items-center justify-center">
-          <div class="w-64 h-64">
-            <!-- Diamond-shaped image container -->
-            <div
-              class="w-full h-full bg-cover bg-center"
-              style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); background-image: url('/seoforma.png');"
-            >
+    <div class="flex flex-col">
+      <div class="flex flex-col mt-12 mb-8 md:flex-row md:mt-52 md:mb-52">
+        <div
+          class="flex flex-col flex-1 mt-8 items-center md:items-start md:mt-0"
+        >
+          <p
+            class="h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
+          >
+            MANTENTE
+          </p>
+          <p
+            class="h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
+          >
+            VISIBLE
+          </p>
+          <p
+            class="h-auto font-poppins tracking-widest text-center md:text-start mt-3"
+          >
+            Destaca en un mundo digital en constante cambio
+          </p>
+          <a
+            href="#about-content"
+            class="animate-bounce-slow focus:animate-none hover:animate-none inline-flex bg-gradient-to-r from-lime-300 to-red-500 text-xl font-medium px-4 py-2 rounded-lg tracking-wide text-white mt-6"
+          >
+            <span class="ml-2">Saber más</span>
+          </a>
+        </div>
+        <div class="flex-1 order-first md:order-last">
+          <div class="flex w-full h-full items-center justify-center">
+            <div class="w-52 h-52 md:w-64 md:h-64">
+              <div class="w-full h-full neon-glow">
+                <img
+                  src={logo.src}
+                  alt="Seoforma logo"
+                  class="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl bg-[#e2e2e2]"
+                />
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- <p class="text-[48px] whitespace-pre-line text-center">
-        BIENVENIDO A<br />SEOFORMA
-      </p> -->
       </div>
-      <div
-        class="flex flex-col flex-1 mt-8 items-center justify-center md:mt-0"
-      >
-        <p
-          class="text-center h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
-        >
-          CONOCE
-        </p>
-        <p
-          class="text-center h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
-        >
-          NUESTRA
-        </p>
-        <p
-          class="text-center h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
-        >
-          HISTORIA
-        </p>
-      </div>
+      <DownArrow />
     </div>
-    <!-- <div class="p-[20px] bg-[#1a292b]"> -->
-    <div class="p-[20px]">
+
+    <div id="about-content" class="p-[20px]">
       <div
-        class="flex flex-col gap-[20px] text-[16px] leading-relaxed tracking-tight md:flex-row md:gap-[140px] sm:mt-[40px]"
+        class="flex flex-col text-[16px] text-center leading-relaxed tracking-tight sm:mt-[40px]"
       >
         <div class="flex-1 text-justify">
           <h1
             class="!mb-[20px] bg-gradient-to-r from-lime-500 via-green-400 to-lime-500 bg-clip-text text-transparent"
           >
-            Un poquito de literatura
+            Seoforma está aquí para ayudarte a dar el paso hacia el mundo
+            digital
           </h1>
           <p>
             Somos Seoforma, un equipo joven y apasionado de Mieres, Asturias,
@@ -80,60 +93,108 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
+
+    <div id="about-us-container" class="p-[20px]">
+      <div
+        class="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group"
+        data-spotlight
+      >
+        <Card
+          icon="binoculars"
+          title="Visión"
+          text="Ser el referente en transformación digital para PYMES en Asturias y más allá, ayudando a nuestros clientes a alcanzar su máximo potencial a través de soluciones innovadoras en desarrollo y diseño web."
+        />
+        <Card
+          icon="mision"
+          title="Misión"
+          text=`Empoderar a las pequeñas y medianas empresas con herramientas digitales efectivas y accesibles, que impulsen su competitividad y crecimiento.\nNos comprometemos a ofrecer un servicio personalizado que refleje la identidad única de cada negocio, asegurando que sus logros sean también los nuestros.`
+        />
+        <Card
+          icon="valores"
+          title="Valores"
+          text=`• Compromiso: Adoptamos los objetivos de nuestros clientes.\n• Innovación: Soluciones creativas y tecnológicas.\n• Colaboración: Trabajo en equipo con clientes.\n• Transparencia: Comunicación clara y honesta.\n• Calidad: Resultados que superan expectativas.`
+        />
+      </div>
+    </div>
+
+    <div id="about-us-contact" class="p-[20px] mt-12 md:mt-10">
+      <div
+        class="flex flex-col gap-[20px] text-[16px] leading-relaxed tracking-tight md:flex-row md:gap-[100px] sm:mt-[40px]"
+      >
+        <div
+          class="flex flex-col flex-1 mt-8 items-center justify-center md:mt-0"
+        >
+          <h2
+            class="!mb-[20px] bg-gradient-to-r from-lime-500 via-green-400 to-lime-500 bg-clip-text text-transparent"
+          >
+            Ahora que nos conoces, ¿nos dejarías acompañarte?
+          </h2>
+          <a
+            href="/contact-us"
+            class="animate-bounce-slow focus:animate-none hover:animate-none inline-flex bg-gradient-to-r from-lime-300 to-red-500 text-xl font-medium px-4 py-2 rounded-lg tracking-wide text-white mt-8"
+          >
+            <span class="ml-2">Saber más</span>
+          </a>
+        </div>
+        <div class="flex-1 text-justify order-first md:order-last">
+          <div class="flex w-full h-full items-center justify-center">
+            <div class="w-52 h-52 md:w-64 md:h-64">
+              <div class="w-full h-full neon-glow">
+                <img
+                  src={us.src}
+                  alt="Seoforma logo"
+                  class="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <style>
-    main {
-      margin: auto;
-      padding: 1rem;
-      width: 800px;
-      max-width: calc(100% - 2rem);
-      color: white;
-      font-size: 20px;
-      line-height: 1.6;
+    @keyframes neonPulse {
+      0%,
+      100% {
+        box-shadow: 0 0 45px 22.5px rgba(200, 255, 0, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 75px 37.5px rgba(200, 255, 0, 1);
+      }
     }
-    .astro-a {
-      position: absolute;
-      top: -32px;
-      left: 50%;
-      transform: translatex(-50%);
-      width: 220px;
-      height: auto;
-      z-index: -1;
-    }
-    .text-gradient {
-      background-image: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 400%;
-      background-position: 0%;
-    }
-    .instructions {
-      margin-bottom: 2rem;
-      border: 1px solid rgba(var(--accent-light), 25%);
-      background: linear-gradient(
-        rgba(var(--accent-dark), 66%),
-        rgba(var(--accent-dark), 33%)
-      );
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-    .instructions code {
-      font-size: 0.8em;
-      font-weight: bold;
-      background: rgba(var(--accent-light), 12%);
-      color: rgb(var(--accent-light));
-      border-radius: 4px;
-      padding: 0.3em 0.4em;
-    }
-    .instructions strong {
-      color: rgb(var(--accent-light));
-    }
-    .link-card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-      gap: 2rem;
-      padding: 0;
+
+    /* Custom class for glowing neon */
+    .neon-glow {
+      box-shadow: 0 0 45px 22.5px rgba(200, 255, 0, 0.7);
+      animation: neonPulse 2s infinite ease-in-out;
+      border-radius: 50%;
     }
   </style>
 </Layout>
+<script src="../utils/spotlight-effect.js"></script>
+
+<script>
+  // Adjust height on href about-content click to avoid header overlap
+  function adjustAboutContentHeight() {
+    const aboutContent = document.getElementById("about-content");
+    const header = document.querySelector("header");
+
+    if (aboutContent && header) {
+      const section = document.querySelector('a[href="#about-content"]');
+      if (section) {
+        section.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: aboutContent.offsetTop - header.offsetHeight,
+            behavior: "smooth",
+          });
+        });
+      }
+    }
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    adjustAboutContentHeight();
+  });
+</script>
