@@ -8,23 +8,17 @@ export default {
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif'],
 			},
-			colors: {
-				'custom-dark-start': '#0f1819',
-				'custom-dark-end': '#1c363f',
+			fontWeight: {
+				'extralight': 200,
+				'light': 300,
+				'normal': 400,
+				'medium': 500,
+				'semibold': 600,
 			},
-			boxShadow: {
-				'custom': '8px 16px 16px rgba(0, 0, 0, 0.25)',
+			letterSpacing: {
+				'wider': '0.1em',
+				'widest': '0.2em',
 			},
-			animation: {
-				'bounce-slow': 'bounce-slow 1s infinite',
-			},
-			keyframes: {
-				'bounce-slow': {
-					'0%, 100%': { transform: 'translateY(-10%)', 'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)' },
-					'50%': { transform: 'translateY(0)', 'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)' },
-				},
-			},
-
 		},
 	},
 	plugins: [
