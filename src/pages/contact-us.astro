@@ -1,0 +1,525 @@
+---
+import logo from "../assets/logo.png";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Contacto - Seoforma">
+  <div class="min-h-screen flex flex-col">
+    <!-- Hero Section -->
+    <section class="flex-1 flex items-center justify-center px-6 py-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8">
+          <img
+            src={logo.src}
+            alt="Seoforma"
+            class="w-20 h-20 mx-auto mb-6 rounded-full"
+          />
+        </div>
+        <h1 class="text-5xl md:text-7xl font-light mb-6">
+          Hablemos de tu
+          <span class="block font-normal bg-gradient-to-r from-blue-400 via-cyan-300 to-cyan-400 bg-clip-text text-transparent pb-3">proyecto digital</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-300 mb-12 font-light max-w-2xl mx-auto">
+          Estamos aquí para escucharte y convertir tu visión en realidad
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 px-6 bg-slate-800/30 backdrop-blur-sm">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16">
+          <!-- Contact Form -->
+          <div>
+            <h2 class="text-3xl font-light mb-8">
+              <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Cuéntanos tu idea</span>
+            </h2>
+            <form class="space-y-6" id="contact-form">
+              <!-- Hidden field for better Formspree integration -->
+              <input type="hidden" name="_subject" value="Nuevo contacto desde Seoforma" />
+              
+              <div>
+                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">
+                  Nombre completo
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:outline-none transition-colors"
+                  placeholder="Tu nombre completo"
+                />
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:outline-none transition-colors"
+                  placeholder="tu@email.com"
+                />
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">
+                  Teléfono (opcional)
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:outline-none transition-colors"
+                  placeholder="+34 123 456 789"
+                />
+              </div>
+              
+              <div>
+                <label for="company" class="block text-sm font-medium text-slate-300 mb-2">
+                  Empresa (opcional)
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:outline-none transition-colors"
+                  placeholder="Nombre de tu empresa"
+                />
+              </div>
+              
+              <div>
+                <label for="service" class="block text-sm font-medium text-slate-300 mb-2">
+                  Tipo de servicio
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:outline-none transition-colors"
+                >
+                  <option value="">Selecciona un servicio</option>
+                  <option value="diseño-web">Diseño Web</option>
+                  <option value="desarrollo-web">Desarrollo Web</option>
+                  <option value="optimizacion-seo">Optimización SEO</option>
+                  <option value="consultoria">Consultoría Digital</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">
+                  Cuéntanos sobre tu proyecto
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 focus:outline-none transition-colors resize-none"
+                  placeholder="Describe tu proyecto, objetivos, plazos, presupuesto estimado..."
+                ></textarea>
+              </div>
+              
+              <button
+                type="submit"
+                class="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                id="submit-btn"
+              >
+                <span id="submit-text">Enviar mensaje</span>
+                <span id="loading-text" class="hidden">Enviando...</span>
+              </button>
+              
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="space-y-8">
+            <div>
+              <h2 class="text-3xl font-light mb-8">
+                <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Información de contacto</span>
+              </h2>
+            </div>
+            
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center border border-cyan-400/40 flex-shrink-0">
+                  <svg class="w-6 h-6 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-medium text-white mb-2">Ubicación</h3>
+                  <p class="text-slate-300">
+                    Mieres, Asturias<br>
+                    España
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center border border-cyan-400/40 flex-shrink-0">
+                  <svg class="w-6 h-6 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-medium text-white mb-2">Email</h3>
+                  <a href="mailto:info@seoforma.es" class="text-cyan-400 hover:text-cyan-400-dark transition-colors">
+                    info@seoforma.es
+                  </a>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center border border-cyan-400/40 flex-shrink-0">
+                  <svg class="w-6 h-6 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-medium text-white mb-2">Teléfono</h3>
+                  <a href="tel:+34123456789" class="text-cyan-400 hover:text-cyan-400-dark transition-colors">
+                    +34 622 948 632
+                  </a>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center border border-cyan-400/40 flex-shrink-0">
+                  <svg class="w-6 h-6 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-medium text-white mb-2">Horario</h3>
+                  <p class="text-slate-300">
+                    Lunes - Viernes: 9:00 - 18:00<br>
+                    Fines de semana: Por cita previa
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="bg-slate-900/30 rounded-lg p-6 border border-cyan-400/20">
+              <h3 class="text-lg font-medium text-white mb-2">Tiempo de respuesta</h3>
+              <p class="text-slate-300 text-sm">
+                Respondemos a todos los mensajes en un plazo máximo de 24 horas durante días laborables.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-light mb-6">
+          <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">¿Prefieres una llamada?</span>
+        </h2>
+        <div class="w-20 h-px bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mb-8"></div>
+        <p class="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
+          También puedes contactarnos directamente para una consulta telefónica gratuita
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="tel:+34123456789"
+            class="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium hover:from-blue-400-dark hover:to-cyan-400-dark transition-all duration-300 shadow-lg"
+          >
+            Llamar ahora
+          </a>
+          <a
+            href="https://wa.me/34123456789"
+            class="px-8 py-4 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  /* Flash message animations */
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slideInTop {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOutTop {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+  
+  /* Custom hover effects for flash messages */
+  .flash-message:hover {
+    cursor: pointer;
+  }
+  
+  /* Desktop hover effect */
+  @media (min-width: 640px) {
+    .flash-message:hover {
+      transform: scale(1.02) !important;
+    }
+  }
+  
+  /* Mobile specific styles */
+  @media (max-width: 639px) {
+    .flash-message {
+      margin: 0 1rem;
+      max-width: calc(100% - 2rem);
+    }
+  }
+  
+  /* Smooth repositioning animation */
+  .flash-message {
+    transition: all 0.5s ease-out;
+  }
+  
+  /* Ensure messages don't interfere with each other */
+  .flash-message + .flash-message {
+    margin-top: 0;
+  }
+</style>
+
+<script>
+  // Form validation and AJAX submission
+  document.addEventListener("astro:page-load", () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+    const submitText = document.getElementById('submit-text') as HTMLElement | null;
+    const loadingText = document.getElementById('loading-text') as HTMLElement | null;
+    
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Always prevent default form submission
+        
+        // Get form data
+        const formData = new FormData(form!);
+        const data = Object.fromEntries(formData);
+        
+        // Basic validation
+        if (!data.name || !data.email || !data.service || !data.message) {
+          showMessage('Por favor, completa todos los campos obligatorios.', 'error');
+          return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email as string)) {
+          showMessage('Por favor, introduce un email válido.', 'error');
+          return;
+        }
+        
+        // Show loading state
+        setLoadingState(true);
+        
+        try {
+          // Real Formspree submission
+          const response = await fetch('https://formspree.io/f/mzzvaola', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            showMessage('¡Gracias por contactarnos! Te responderemos en las próximas 24 horas.', 'success');
+            form!.reset();
+          } else {
+            throw new Error('Error en el envío');
+          }
+        } catch (error) {
+          showMessage('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o contáctanos directamente.', 'error');
+        } finally {
+          setLoadingState(false);
+        }
+      });
+      
+    }
+    
+    function setLoadingState(loading: boolean) {
+      if (submitBtn && submitText && loadingText) {
+        submitBtn!.disabled = loading;
+        if (loading) {
+          submitText.classList.add('hidden');
+          loadingText.classList.remove('hidden');
+        } else {
+          submitText.classList.remove('hidden');
+          loadingText.classList.add('hidden');
+        }
+      }
+    }
+    
+    function showMessage(message: string, type: 'success' | 'error') {
+      // Calculate position based on existing messages
+      const existingMessages = document.querySelectorAll('.flash-message');
+      const messageHeight = 120; // Much larger height estimate to account for multi-line messages
+
+      
+      const stackPosition = (existingMessages.length * (messageHeight));
+      
+      // Create unique message ID
+      const messageId = 'msg-' + Date.now() + '-' + Math.random().toString(36).substring(2, 11);
+      
+      // Create message container
+      const messageDiv = document.createElement('div');
+      messageDiv.setAttribute('data-message-id', messageId);
+      messageDiv.style.minHeight = '80px'; // Ensure minimum height for consistent spacing
+      messageDiv.className = `flash-message fixed left-4 right-4 sm:left-auto sm:right-6 z-[9999] w-auto sm:max-w-sm p-4 rounded-lg shadow-2xl transform transition-all duration-500 ease-out ${
+        type === 'success' 
+          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white border border-green-400/30' 
+          : 'bg-gradient-to-r from-red-500 to-rose-500 text-white border border-red-400/30'
+      }`;
+      
+      // Create icon
+      const icon = document.createElement('div');
+      icon.className = 'flex items-center mb-2';
+      icon.innerHTML = type === 'success' 
+        ? `<svg class="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+           </svg>
+           <span class="font-semibold">¡Éxito!</span>`
+        : `<svg class="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+           </svg>
+           <span class="font-semibold">Error</span>`;
+      
+      // Create message text
+      const messageText = document.createElement('div');
+      messageText.className = 'text-sm leading-relaxed';
+      messageText.textContent = message;
+      
+      // Create progress bar
+      const progressBar = document.createElement('div');
+      progressBar.className = 'absolute bottom-0 left-0 h-1 bg-white/30 transition-all duration-[5000ms] ease-linear';
+      progressBar.style.width = '100%';
+      
+      // Assemble message
+      messageDiv.appendChild(icon);
+      messageDiv.appendChild(messageText);
+      messageDiv.appendChild(progressBar);
+      
+      // Set the calculated top position
+      messageDiv.style.top = `${stackPosition}px`;
+      
+      // Add to page
+      document.body.appendChild(messageDiv);
+      
+      // Check if mobile or desktop for different animations
+      const isMobile = window.innerWidth < 640; // sm breakpoint
+      
+      // Set initial transform based on screen size
+      if (isMobile) {
+        messageDiv.style.transform = 'translateY(-100%)';
+        messageDiv.style.opacity = '0';
+      } else {
+        messageDiv.style.transform = 'translateX(100%)';
+      }
+      
+      // Animate in
+      setTimeout(() => {
+        if (isMobile) {
+          messageDiv.style.transform = 'translateY(0)';
+          messageDiv.style.opacity = '1';
+        } else {
+          messageDiv.style.transform = 'translateX(0)';
+        }
+        // Start progress bar animation
+        setTimeout(() => {
+          progressBar.style.width = '0%';
+        }, 100);
+      }, 100);
+      
+      // Function to close message and reposition remaining messages
+      const closeMessage = () => {
+        if (isMobile) {
+          messageDiv.style.transform = 'translateY(-100%)';
+          messageDiv.style.opacity = '0';
+        } else {
+          messageDiv.style.transform = 'translateX(100%)';
+          messageDiv.style.opacity = '0';
+        }
+        
+        setTimeout(() => {
+          if (messageDiv.parentNode) {
+            messageDiv.parentNode.removeChild(messageDiv);
+            // Reposition remaining messages
+            repositionMessages();
+          }
+        }, 500);
+      };
+      
+      // Function to reposition all visible messages with smooth animation
+      function repositionMessages() {
+        const visibleMessages = document.querySelectorAll('.flash-message');
+        visibleMessages.forEach((msg, index) => {
+          const newTop = (index * (messageHeight));
+          (msg as HTMLElement).style.transition = 'top 0.3s ease-out';
+          (msg as HTMLElement).style.top = `${newTop}px`;
+        });
+      }
+      
+      // Remove after 5 seconds
+      setTimeout(closeMessage, 5000);
+      
+      // Allow manual close on click
+      messageDiv.addEventListener('click', closeMessage);
+      
+      // Add hover effect to pause auto-dismiss (desktop only)
+      if (!isMobile) {
+        messageDiv.addEventListener('mouseenter', () => {
+          progressBar.style.animationPlayState = 'paused';
+        });
+        
+        messageDiv.addEventListener('mouseleave', () => {
+          progressBar.style.animationPlayState = 'running';
+        });
+      }
+    }
+  });
+</script>

@@ -1,7 +1,7 @@
 ---
-import { getImage, Image } from "astro:assets";
+import { getImage } from "astro:assets";
 
-import logo from "../assets/logo.webp";
+import logo from "../assets/logo.png";
 
 const optimizedLogo = await getImage({
   src: logo,
@@ -19,11 +19,9 @@ const optimizedLogo = await getImage({
         alt="Seoforma logo"
         class="mr-3 h-6 sm:h-9 w-auto"
       />
-      <span
-        class="self-center text-xl text-white font-semibold whitespace-nowrap text-2xl md:text-5xl font-[700]"
-      >
+      <h2 class="self-center text-xl text-white whitespace-nowrap text-2xl md:text-5xl">
         Seoforma
-      </span>
+      </h2>
     </a>
     <div
       class="flex-1 flex flex-row md:flex-col md:ml-12 justify-around md:justify-normal text-center items-center md:text-left"
@@ -37,7 +35,7 @@ const optimizedLogo = await getImage({
   </div>
   <div class="flex-1">
     <h2
-      class="bg-gradient-to-r from-lime-500 via-green-400 to-lime-500 bg-clip-text text-transparent py-3 text-2xl md:text-5xl font-[700]"
+      class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent py-3"
     >
       Contáctanos
     </h2>
