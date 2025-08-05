@@ -1,200 +1,163 @@
 ---
-import seoforma from "../assets/seoforma.png";
-import us from "../assets/contact-us.webp";
-import logo from "../assets/logo.webp";
+import logo from "../assets/logo.png";
 
 import Layout from "@layouts/Layout.astro";
-import DownArrow from "@components/buttons/DownArrow.astro";
-import Card from "@components/Card.astro";
 ---
 
-<Layout title="About">
-  <div class="flex flex-col mx-auto size-full max-w-[90rem] md:max-w-[75rem]">
-    <div class="flex flex-col">
-      <div class="flex flex-col mt-12 mb-8 md:flex-row md:mt-52 md:mb-52">
-        <div
-          class="flex flex-col flex-1 mt-8 items-center md:items-start md:mt-0"
-        >
-          <p
-            class="h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
-          >
-            MANTENTE
-          </p>
-          <p
-            class="h-auto font-poppins font-bold tracking-widest text-4xl md:text-6xl font-[700]"
-          >
-            VISIBLE
-          </p>
-          <p
-            class="h-auto font-poppins tracking-widest text-center md:text-start mt-3"
-          >
-            Destaca en un mundo digital en constante cambio
-          </p>
+<Layout title="Seoforma - Servicios de Creación Web">
+  <div class="min-h-screen flex flex-col">
+    <!-- Hero Section -->
+    <section class="flex-1 flex items-center justify-center px-6 py-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8">
+          <img
+            src={logo.src}
+            alt="Seoforma"
+            class="w-20 h-20 mx-auto mb-6 rounded-full"
+          />
+        </div>
+        <h1 class="text-5xl md:text-7xl font-light mb-6">
+          Creamos experiencias
+          <span class="block font-normal bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-400 bg-clip-text text-transparent pb-3">digitales únicas</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-300 mb-12 font-light max-w-2xl mx-auto">
+          Transformamos ideas en sitios web que conectan con tu audiencia
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#about-content"
-            class="animate-bounce-slow focus:animate-none hover:animate-none inline-flex bg-gradient-to-r from-lime-300 to-red-500 text-xl font-medium px-4 py-2 rounded-lg tracking-wide text-white mt-6"
+            href="#servicios"
+            class="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg"
           >
-            <span class="ml-2">Saber más</span>
+            Ver servicios
+          </a>
+          <a
+            href="#contacto"
+            class="px-8 py-4 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 transition-colors"
+          >
+            Contactar
           </a>
         </div>
-        <div class="flex-1 order-first md:order-last">
-          <div class="flex w-full h-full items-center justify-center">
-            <div class="w-52 h-52 md:w-64 md:h-64">
-              <div class="w-full h-full neon-glow">
-                <img
-                  src={logo.src}
-                  alt="Seoforma logo"
-                  class="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl bg-[#e2e2e2]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <DownArrow />
-    </div>
+    </section>
 
-    <div id="about-content" class="p-[20px]">
-      <div
-        class="flex flex-col text-[16px] text-center leading-relaxed tracking-tight sm:mt-[40px]"
-      >
-        <div class="flex-1 text-justify">
-          <h1
-            class="!mb-[20px] bg-gradient-to-r from-lime-500 via-green-400 to-lime-500 bg-clip-text text-transparent"
-          >
-            Seoforma está aquí para ayudarte a dar el paso hacia el mundo
-            digital
-          </h1>
-          <p>
-            Somos Seoforma, un equipo joven y apasionado de Mieres, Asturias,
-            formado por estudiantes de Administración y Dirección de Empresas
-            (ADE) y Programación Informática en la Universidad de Oviedo.
-            Nacimos con la visión de transformar el panorama digital de las
-            pequeñas y medianas empresas (PYMES), ayudándolas a ser más
-            competitivas en un mercado en constante evolución.
-          </p>
-        </div>
-        <div class="flex-1 text-justify">
-          <p class="md:mt-[10px]">
-            Creemos que el éxito de nuestros clientes es también nuestro éxito.
-            Nos enfocamos en ofrecer soluciones personalizadas en diseño y
-            desarrollo web que no solo mejoran la presencia online de las
-            empresas, sino que también potencian su crecimiento y rentabilidad.
-            Nuestra misión es convertirnos en el aliado digital que tu negocio
-            necesita, proporcionando herramientas efectivas que impulsen tus
-            resultados.
-          </p>
-          <p class="md:mt-[20px]">
-            Desde Mieres, trabajamos con el compromiso de llevar la innovación
-            digital a cada rincón de Asturias y más allá. Con Seoforma, tus
-            metas se convierten en nuestras, y juntos, alcanzaremos el siguiente
-            nivel.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div id="about-us-container" class="p-[20px]">
-      <div
-        class="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group"
-        data-spotlight
-      >
-        <Card
-          icon="binoculars"
-          title="Visión"
-          text="Ser el referente en transformación digital para PYMES en Asturias y más allá, ayudando a nuestros clientes a alcanzar su máximo potencial a través de soluciones innovadoras en desarrollo y diseño web."
-        />
-        <Card
-          icon="mision"
-          title="Misión"
-          text=`Empoderar a las pequeñas y medianas empresas con herramientas digitales efectivas y accesibles, que impulsen su competitividad y crecimiento.\nNos comprometemos a ofrecer un servicio personalizado que refleje la identidad única de cada negocio, asegurando que sus logros sean también los nuestros.`
-        />
-        <Card
-          icon="valores"
-          title="Valores"
-          text=`• Compromiso: Adoptamos los objetivos de nuestros clientes.\n• Innovación: Soluciones creativas y tecnológicas.\n• Colaboración: Trabajo en equipo con clientes.\n• Transparencia: Comunicación clara y honesta.\n• Calidad: Resultados que superan expectativas.`
-        />
-      </div>
-    </div>
-
-    <div id="about-us-contact" class="p-[20px] mt-12 md:mt-10">
-      <div
-        class="flex flex-col gap-[20px] text-[16px] leading-relaxed tracking-tight md:flex-row md:gap-[100px] sm:mt-[40px]"
-      >
-        <div
-          class="flex flex-col flex-1 mt-8 items-center justify-center md:mt-0"
-        >
-          <h2
-            class="!mb-[20px] bg-gradient-to-r from-lime-500 via-green-400 to-lime-500 bg-clip-text text-transparent"
-          >
-            Ahora que nos conoces, ¿nos dejarías acompañarte?
+    <!-- About Section -->
+    <section id="nosotros" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-light mb-6">
+            <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Quiénes somos</span>
           </h2>
-          <a
-            href="/contact-us"
-            class="animate-bounce-slow focus:animate-none hover:animate-none inline-flex bg-gradient-to-r from-lime-300 to-red-500 text-xl font-medium px-4 py-2 rounded-lg tracking-wide text-white mt-8"
-          >
-            <span class="ml-2">Saber más</span>
-          </a>
+          <div class="w-20 h-px bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
         </div>
-        <div class="flex-1 text-justify order-first md:order-last">
-          <div class="flex w-full h-full items-center justify-center">
-            <div class="w-52 h-52 md:w-64 md:h-64">
-              <div class="w-full h-full neon-glow">
-                <img
-                  src={us.src}
-                  alt="Seoforma logo"
-                  class="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl"
-                />
-              </div>
-            </div>
+        <div class="grid md:grid-cols-2 gap-16 text-lg leading-relaxed">
+          <div class="space-y-6">
+            <p class="text-slate-300">
+              Somos un equipo joven y apasionado de Mieres, Asturias, especializado en transformar ideas en experiencias digitales memorables.
+            </p>
+            <p class="text-slate-300">
+              Formado por estudiantes de ADE y Programación Informática de la Universidad de Oviedo, combinamos visión empresarial con excelencia técnica.
+            </p>
+          </div>
+          <div class="space-y-6">
+            <p class="text-slate-300">
+              Creemos que cada negocio tiene una historia única que contar. Nuestro enfoque es crear soluciones web personalizadas que reflejen la esencia de tu marca.
+            </p>
+            <p class="text-slate-300">
+              Desde Asturias para el mundo, trabajamos contigo para llevar tu presencia digital al siguiente nivel.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 px-6 bg-slate-800/30 backdrop-blur-sm">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-light mb-6">
+            <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Nuestros servicios</span>
+          </h2>
+          <div class="w-20 h-px bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center p-8">
+            <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full flex items-center justify-center border border-cyan-400/30">
+              <svg class="w-8 h-8 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 3h18v18H3V3zm16 16V5H5v14h14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium mb-4 text-white">Diseño Web</h3>
+            <p class="text-slate-300 leading-relaxed">
+              Creamos interfaces elegantes y funcionales que transmiten la esencia de tu marca
+            </p>
+          </div>
+          <div class="text-center p-8">
+            <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full flex items-center justify-center border border-cyan-400/30">
+              <svg class="w-8 h-8 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium mb-4 text-white">Desarrollo</h3>
+            <p class="text-slate-300 leading-relaxed">
+              Desarrollamos sitios web rápidos, seguros y optimizados para todos los dispositivos
+            </p>
+          </div>
+          <div class="text-center p-8">
+            <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full flex items-center justify-center border border-cyan-400/30">
+              <svg class="w-8 h-8 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium mb-4 text-white">Optimización</h3>
+            <p class="text-slate-300 leading-relaxed">
+              Mejoramos el rendimiento y posicionamiento SEO para maximizar tu alcance digital
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-light mb-6">
+          <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">¿Hablamos?</span>
+        </h2>
+        <div class="w-20 h-px bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mb-8"></div>
+        <p class="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
+          Estamos listos para transformar tu idea en una experiencia digital memorable
+        </p>
+        <a
+          href="/contact-us"
+          class="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg"
+        >
+          Iniciar proyecto
+        </a>
+      </div>
+    </section>
   </div>
 
-  <style>
-    @keyframes neonPulse {
-      0%,
-      100% {
-        box-shadow: 0 0 45px 22.5px rgba(200, 255, 0, 0.7);
-      }
-      50% {
-        box-shadow: 0 0 75px 37.5px rgba(200, 255, 0, 1);
-      }
-    }
-
-    /* Custom class for glowing neon */
-    .neon-glow {
-      box-shadow: 0 0 45px 22.5px rgba(200, 255, 0, 0.7);
-      animation: neonPulse 2s infinite ease-in-out;
-      border-radius: 50%;
-    }
-  </style>
 </Layout>
-<script src="../utils/spotlight-effect.js"></script>
 
 <script>
-  // Adjust height on href about-content click to avoid header overlap
-  function adjustAboutContentHeight() {
-    const aboutContent = document.getElementById("about-content");
-    const header = document.querySelector("header");
-
-    if (aboutContent && header) {
-      const section = document.querySelector('a[href="#about-content"]');
-      if (section) {
-        section.addEventListener("click", function (e) {
-          e.preventDefault();
+  // Smooth scroll for navigation links
+  document.addEventListener("astro:page-load", () => {
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+      link.addEventListener("click", function (this: HTMLAnchorElement, e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href")!.substring(1);
+        const targetSection = document.getElementById(targetId);
+        const header = document.querySelector("header");
+        
+        if (targetSection && header) {
           window.scrollTo({
-            top: aboutContent.offsetTop - header.offsetHeight,
+            top: targetSection.offsetTop - header.offsetHeight - 20,
             behavior: "smooth",
           });
-        });
-      }
-    }
-  }
-
-  document.addEventListener("astro:page-load", () => {
-    adjustAboutContentHeight();
+        }
+      });
+    });
   });
 </script>

@@ -16,7 +16,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Seoforma web" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/logo.webp" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
@@ -32,26 +32,11 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      type="text/partytown"
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-8BTJNVCTGJ"></script>
-    <script type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-8BTJNVCTGJ");
-    </script>
-
     <!-- Astro transitions -->
     <ViewTransitions />
   </head>
   <body
-    class="bg-gradient-to-b from-custom-dark-start to-custom-dark-end h-vh min-h-screen"
+    class="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white min-h-screen font-light"
   >
     <Header />
     <main id="main-content">
@@ -66,46 +51,48 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
   html {
-    font-family: system-ui, sans-serif;
-    background: #0f1819;
+    font-family: 'Poppins', system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #111827 50%, #1e293b 100%);
     color: white;
+    scroll-behavior: smooth;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+  
+  body {
+    font-weight: 300;
+    line-height: 1.7;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0;
+  }
+  
   h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
+    font-size: clamp(2.5rem, 5vw, 4rem);
   }
-
+  
   h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  a {
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  button, .button {
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  * {
+    box-sizing: border-box;
   }
 </style>
