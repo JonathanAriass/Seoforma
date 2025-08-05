@@ -7,5 +7,5 @@ export default defineConfig({
   integrations: [
     tailwind()
   ],
-  site: 'http://www.seoforma.es',
+  site: 'https://www.seoforma.es',
 });
